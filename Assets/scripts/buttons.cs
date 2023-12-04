@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class buttons : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool cameraMove = false;
+
+
+    public void activateCamera()
     {
-        
+        if (cameraMove)
+        {
+            cameraMove = false;
+        }
+        else
+        {
+            cameraMove = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void chooseArbol1()
     {
-        
+        createObjects.valueObject = 0;
+    }
+
+    public void chooseArbol2()
+    {
+        createObjects.valueObject = 1;
+    }
+
+    public void chooseCasa()
+    {
+        createObjects.valueObject = 2;
+    }
+
+    public void chooseTemplo()
+    {
+        createObjects.valueObject = 3;
     }
 }
