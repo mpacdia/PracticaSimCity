@@ -5,6 +5,8 @@ using UnityEngine;
 public class buttons : MonoBehaviour
 {
     public bool cameraMove = false;
+    public GameObject menuCreateCamera;
+    public GameObject menuBuild;
 
 
     public void activateCamera()
@@ -37,5 +39,17 @@ public class buttons : MonoBehaviour
     public void chooseTemplo()
     {
         createObjects.valueObject = 3;
+    }
+
+    public void createMode()
+    {
+        menuBuild.SetActive(true);
+        menuCreateCamera.SetActive(false);
+    }
+
+    public void closeCreateMode()
+    {
+        menuBuild.SetActive(false);
+        menuCreateCamera.SetActive(true);
     }
 }
