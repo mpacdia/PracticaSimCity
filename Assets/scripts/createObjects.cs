@@ -9,13 +9,14 @@ public class createObjects : MonoBehaviour
     public GameObject casa;
     public GameObject templo;
     GameObject toBuild;
-    static public int valueObject;
+    public int valueObject { get; set; }
     Rigidbody rb;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        valueObject = 0;
     }
 
     // Update is called once per frame
@@ -23,14 +24,20 @@ public class createObjects : MonoBehaviour
     {
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        RaycastHit direction;
+        RaycastHit objectPosition;
+
+        Debug.Log(valueObject);
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (Physics.Raycast(cameraRay, out direction, 1000))
+            if (Physics.Raycast(cameraRay, out objectPosition, Mathf.Infinity))
             {
-                Vector3 positionObject = direction.point;
-                Object.Instantiate(toBuild, positionObject, new Quaternion(0, 0, 0, 0));
+                if (objectPosition.collider.gameObject.CompareTag("terrain"))
+                {
+                    chooseObject();
+                    Debug.Log(toBuild.name);
+                    Object.Instantiate(toBuild, objectPosition.point, new Quaternion(0, 0, 0, 0));
+                }
             }
         }
     }

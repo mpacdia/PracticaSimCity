@@ -3,7 +3,11 @@ guid: 7f9bad2060a6f704bbbf3cd3b924bea0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - arbol1: {fileID: 919132149155446097, guid: 34c552af8f17a4c468772c55fcd28214, type: 3}
+  - arbol2: {fileID: 919132149155446097, guid: 26e1ca77cd0d8fa4d839d565a65ab30f, type: 3}
+  - casa: {fileID: 919132149155446097, guid: 149098b8d1ef03845a5b6e54ac872dc3, type: 3}
+  - templo: {fileID: 919132149155446097, guid: 1e4abba886ff6804aad78d6b307f3742, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

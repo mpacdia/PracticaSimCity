@@ -7,7 +7,12 @@ public class buttons : MonoBehaviour
     public bool cameraMove = false;
     public GameObject menuCreateCamera;
     public GameObject menuBuild;
+    createObjects _crearController;
 
+    void Start()
+    {
+        _crearController = GameObject.Find("MainCamera").GetComponent<createObjects>();
+    }
 
     public void activateCamera()
     {
@@ -23,22 +28,22 @@ public class buttons : MonoBehaviour
 
     public void chooseArbol1()
     {
-        createObjects.valueObject = 0;
+        _crearController.valueObject = 0;
     }
 
     public void chooseArbol2()
     {
-        createObjects.valueObject = 1;
+        _crearController.valueObject = 1;
     }
 
     public void chooseCasa()
     {
-        createObjects.valueObject = 2;
+        _crearController.valueObject = 2;
     }
 
     public void chooseTemplo()
     {
-        createObjects.valueObject = 3;
+        _crearController.valueObject = 3;
     }
 
     public void createMode()
