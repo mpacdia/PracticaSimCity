@@ -17,16 +17,18 @@ public class createObjects : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         valueObject = 0;
+
+        Debug.Log(valueObject);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(valueObject);
+
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit objectPosition;
-
-        Debug.Log(valueObject);
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -36,7 +38,7 @@ public class createObjects : MonoBehaviour
                 {
                     chooseObject();
                     Debug.Log(toBuild.name);
-                    Object.Instantiate(toBuild, objectPosition.point, new Quaternion(0, 0, 0, 0));
+                    Object.Instantiate(toBuild, objectPosition.point, toBuild.transform.rotation);
                 }
             }
         }
