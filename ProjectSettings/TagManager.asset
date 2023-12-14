@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - terrain
+  - Arbol1
+  - Arbol2
+  - Casa
+  - Templo
   layers:
   - Default
   - TransparentFX
